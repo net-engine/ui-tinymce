@@ -54,7 +54,7 @@ angular.module('ui.tinymce', [])
               updateView();
             });
             // Update model on change, i.e. copy/pasted text, plugins altering content
-            ed.on('SetContent', function (e) {
+            ed.on('change', function (e) {
               if (!e.initial && ngModel.$viewValue !== e.content) {
                 ed.save();
                 updateView();
